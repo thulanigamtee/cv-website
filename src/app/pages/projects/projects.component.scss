@@ -1,0 +1,56 @@
+@use "../../partials/" as *;
+
+.projects {
+  @include pageStyle;
+  border-block: 1px solid var(--border-color);
+  padding-block: 40px;
+  &__list {
+    &__item {
+      margin-top: 60px;
+      border-left: 1px solid var(--border-color);
+      padding-left: 30px;
+      margin-left: 10px;
+      h2 {
+        text-transform: capitalize;
+        transform: translateY(-10px);
+        &::before {
+          content: "";
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: var(--grayish-dark-blue);
+          box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--grayish-dark-blue);
+          position: absolute;
+          transform: translate(-38px, 8px);
+        }
+      }
+      &__features {
+        margin-top: 20px;
+        li {
+          list-style: circle;
+          margin-left: 18px;
+          margin-top: 10px;
+        }
+      }
+      &__technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        li {
+          p {
+            font-size: 13px;
+            width: max-content;
+            background-color: var(--light-grey);
+            border-radius: 20px;
+            padding-inline: 15px;
+          }
+        }
+      }
+    }
+  }
+  &__newItemBtn {
+    @include clearBtn;
+    margin-top: 60px;
+  }
+}

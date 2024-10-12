@@ -1,0 +1,15 @@
+.illustration-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  gap: 20px 0;
+  img {
+    width: 100%;
+    max-width: 450px;
+  }
+  &__info {
+    text-align: center;
+  }
+}

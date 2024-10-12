@@ -1,0 +1,27 @@
+<main class="projects">
+  <h1>projects</h1>
+  <ul class="projects__list">
+    @for(project of projects; track project.id) {
+    <li class="projects__list__item">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+      <ul class="projects__list__item__features">
+        <h3>Features:</h3>
+        @for(feature of project.features; track $index) {
+        <li>
+          <p>{{ feature }}</p>
+        </li>
+        }
+      </ul>
+      <ul class="projects__list__item__technologies">
+        @for(technology of project.technologies; track $index) {
+        <li>
+          <p>{{ technology }}</p>
+        </li>
+        }
+      </ul>
+    </li>
+    }
+  </ul>
+</main>
+<app-to-contact-page />

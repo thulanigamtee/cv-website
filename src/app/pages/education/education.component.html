@@ -1,0 +1,10 @@
+<main class="education">
+  <h1>Education</h1>
+  <app-timeline
+    [data]="educationList"
+    [page]="'education'"
+    [isLoading]="isLoading"
+    (deleteEmitter)="deleteEducation($event)"
+  />
+</main>
+<app-to-contact-page />

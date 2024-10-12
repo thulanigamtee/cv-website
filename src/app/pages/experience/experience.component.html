@@ -1,0 +1,10 @@
+<main class="experience">
+  <h1>experience</h1>
+  <app-timeline
+    [data]="experiences"
+    [page]="'experience'"
+    [isLoading]="isLoading"
+    (deleteEmitter)="deleteExperience($event)"
+  />
+</main>
+<app-to-contact-page />

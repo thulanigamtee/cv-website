@@ -1,0 +1,103 @@
+@use "./app/partials/" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $publicSans;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: $publicSans;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  font-family: $publicSans;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+ul {
+  li {
+    list-style: none;
+    a {
+      @media (min-width: 768px) {
+        color: var(--grayish-dark-blue);
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    li {
+      a {
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $ibarra;
+  color: var(--grayish-dark-blue);
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: -0.26px;
+  line-height: 42px;
+  text-transform: capitalize;
+}
+
+p {
+  font-family: $publicSans;
+  color: var(--grayish-dark-blue);
+  font-size: 15px;
+  line-height: 30px;
+  @media (min-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+label {
+  font-family: $publicSans;
+  color: var(--grayish-dark-blue);
+}
+
+input,
+textarea {
+  font-family: $publicSans;
+  border: none;
+  background-color: var(--light-grey);
+  height: 48px;
+  padding-left: 20px;
+  &::placeholder {
+    color: hsla(245, 10%, 22%, 0.4);
+    font-size: 13px;
+  }
+}
+
+textarea {
+  height: 96px;
+  padding-top: 20px;
+}

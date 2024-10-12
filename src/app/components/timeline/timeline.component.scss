@@ -1,0 +1,103 @@
+@use "../../partials" as *;
+
+.data__list {
+  margin-top: 40px;
+  &__item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    &:not(:first-of-type) {
+      margin-top: 40px;
+    }
+    &__container {
+      &__info {
+        &__date {
+          background-color: var(--light-grey);
+          border-radius: 50px;
+          padding-inline: 20px;
+          width: fit-content;
+          transform: translateX(30px);
+          &::before {
+            content: "";
+            width: 20px;
+            height: 3px;
+            background-color: var(--grayish-dark-blue);
+            position: absolute;
+            transform: translate(-50px, 14px);
+          }
+        }
+        &__name {
+          margin-top: 20px;
+        }
+        &__qualification {
+          opacity: 0.5;
+          font-weight: 200;
+        }
+        &__description {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      margin-inline: auto;
+      padding-top: 40px;
+      padding-inline: 0;
+      padding-left: 5px;
+      &:not(:first-of-type) {
+        margin-top: 0px;
+      }
+      &__container {
+        &__info {
+          width: 340px;
+          &__date {
+            transform: translateX(0);
+            &::before {
+              content: "";
+              transform: translate(-50px, 14px);
+              display: none;
+            }
+          }
+        }
+      }
+      &:nth-child(odd) {
+        border-left: 2px solid var(--grayish-dark-blue);
+        transform: translateX(199px);
+        &::before {
+          left: 0;
+          transform: translateX(-11px);
+        }
+      }
+      &:nth-child(even) {
+        border-right: 2px solid var(--grayish-dark-blue);
+        transform: translateX(-199px);
+        &::before {
+          right: 0;
+          transform: translateX(11px);
+        }
+      }
+      &:nth-child(even),
+      &:nth-child(odd) {
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: var(--grayish-dark-blue);
+          box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--grayish-dark-blue);
+          position: absolute;
+          top: 44px;
+        }
+      }
+    }
+  }
+}
+
+.newItemBtn {
+  @include clearBtn;
+  margin-top: 60px;
+}

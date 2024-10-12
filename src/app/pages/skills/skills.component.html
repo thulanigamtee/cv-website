@@ -1,0 +1,37 @@
+<main class="skills">
+  <h1>Skills</h1>
+  <div class="skills__languages">
+    <h2>languages</h2>
+    <ul class="skills__languages__list">
+      @for(language of languages; track $index) {
+      <li class="skills__languages__list__item">
+        <img [src]="language.src" [alt]="language.name" />
+        <p>{{ language.name }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="skills__frameworks">
+    <h2>frameworks/libraries</h2>
+    <ul class="skills__frameworks__list">
+      @for(framework of frameworks; track $index) {
+      <li class="skills__frameworks__list__item">
+        <img [src]="framework.src" [alt]="framework.name" />
+        <p>{{ framework.name }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="skills__tools">
+    <h2>tools</h2>
+    <ul class="skills__tools__list">
+      @for(tool of tools; track $index) {
+      <li class="skills__frameworks__list__item">
+        <img [src]="tool.src" [alt]="tool.name" />
+        <p>{{ tool.name }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+</main>
+<app-to-contact-page />

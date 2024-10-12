@@ -1,0 +1,54 @@
+<div class="dialog">
+  <!-- <h2>{{ isEditMode ? "Edit" : "Add" }} Experience</h2> -->
+  <form
+    class="dialog__form"
+    [formGroup]="experienceForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <section class="dialog__form__section">
+      <div>
+        <label for="companyName">company name</label>
+        <input
+          id="companyName"
+          type="text"
+          placeholder="Enter company name"
+          formControlName="companyName"
+        />
+      </div>
+      <div>
+        <label for="role">role</label>
+        <input
+          id="role"
+          type="text"
+          placeholder="Enter role"
+          formControlName="role"
+        />
+      </div>
+      <div>
+        <label for="description">description</label>
+        <textarea
+          id="description"
+          type="text"
+          placeholder="Enter description"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div>
+        <div>
+          <label for="startDate">start date</label>
+          <input id="startDate" type="date" formControlName="startDate" />
+        </div>
+        <div>
+          <label for="endDate">end date</label>
+          <input id="endDate" type="date" formControlName="endDate" />
+        </div>
+      </div>
+      <div>
+        <button type="button" (click)="onCancel()">cancel</button>
+        <button type="submit" [disabled]="experienceForm.invalid">
+          {{ isEditMode ? "Update" : "Create" }}
+        </button>
+      </div>
+    </section>
+  </form>
+</div>

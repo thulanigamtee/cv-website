@@ -1,0 +1,22 @@
+.action-btns {
+  display: flex;
+  gap: 0 20px;
+  margin-top: 30px;
+  button {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 2px solid var(--grayish-dark-blue);
+    border-radius: 50%;
+    overflow: hidden;
+    color: transparent;
+    cursor: pointer;
+    &:first-of-type {
+      background-image: url("../../../../public/assets/icons/edit.svg");
+    }
+    &:last-of-type {
+      background-image: url("../../../../public/assets/icons/delete.svg");
+    }
+  }
+}

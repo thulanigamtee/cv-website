@@ -1,0 +1,36 @@
+@mixin pageStyle {
+  width: 83%;
+  margin-inline: auto;
+  margin-top: 36px;
+  @media (min-width: 768px) {
+    width: 90%;
+  }
+  @media (min-width: 1024px) {
+    width: 77%;
+  }
+}
+
+@mixin routeBtn {
+  display: inline-block;
+  background-color: var(--dark-blue);
+  border: 1px solid transparent;
+  color: var(--white);
+  padding-inline: 60px;
+  padding-block: 18px;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid var(--grayish-dark-blue);
+    color: var(--grayish-dark-blue);
+  }
+}
+
+@mixin clearBtn {
+  border: 1px solid var(--grayish-dark-blue);
+  width: 202px;
+  height: 48px;
+  margin-top: 20px;
+  &:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+  }
+}

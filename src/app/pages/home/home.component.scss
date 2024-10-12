@@ -1,0 +1,34 @@
+@use "../../partials/" as *;
+
+.home {
+  @include pageStyle;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-block: 1px solid var(--border-color);
+  padding-block: 40px;
+  &__info {
+    h1 {
+      margin-block: 15px;
+    }
+  }
+  &__toAbout {
+    @include routeBtn;
+    margin-top: 40px;
+  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 60px;
+    &__info {
+      width: 60%;
+      h1 {
+        margin-block: 20px;
+      }
+    }
+    &__toAbout {
+      margin-top: 0;
+    }
+  }
+}

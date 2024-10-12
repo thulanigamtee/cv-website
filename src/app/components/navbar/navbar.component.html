@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="header__logo">
+    <img src="/assets/logo.svg" alt="logo" />
+  </div>
+  <nav class="header__nav" [class.active]="isActive">
+    <ul>
+      @for(route of routes; track $index) {
+      <li>
+        <a
+          [routerLink]="route.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{ route.name }}
+        </a>
+      </li>
+      }
+    </ul>
+  </nav>
+  <button class="header__menu" (click)="toggleMenu()">
+    <span [class.active]="isActive"></span>
+    <span [class.active]="isActive"></span>
+    <span [class.active]="isActive"></span>
+  </button>
+</header>

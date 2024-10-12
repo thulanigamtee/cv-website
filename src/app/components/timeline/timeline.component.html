@@ -1,0 +1,51 @@
+@if(isLoading) {
+<app-loader />
+} @else if(!isLoading && data.length > 0) {
+<ul class="data__list">
+  @for(item of data; track item.id) {
+  <li class="data__list__item">
+    <div class="data__list__item__container">
+      <div class="data__list__item__container__info">
+        <p class="data__list__item__container__info__date">
+          {{ item.startDate | date : "MMM yyyy" }} to
+          {{ item.endDate | date : "MMM yyyy" }}
+        </p>
+        <h2 class="data__list__item__container__info__name">
+          {{ item.name ?? item.companyName }}
+        </h2>
+        <p class="data__list__item__container__info__qualification">
+          {{ item.qualification ?? item.role }}
+        </p>
+        <p class="data__list__item__container__info__description">
+          {{ item.description }}
+        </p>
+      </div>
+      <app-action-btns
+        [id]="item.id ?? 0"
+        [page]="page"
+        (deleteEmitter)="delete(item.id)"
+      />
+    </div>
+  </li>
+  }
+</ul>
+
+@if(page === 'education') {
+<button class="newItemBtn" [routerLink]="['/education/new']">
+  add education
+</button>
+} @else if(page === 'experience') {
+<button class="newItemBtn" [routerLink]="['/experience/new']">
+  add experience
+</button>
+} } @else if (!isLoading && data.length === 0) {
+<app-illustration-empty />
+@if(page === 'education') {
+<button class="newItemBtn" [routerLink]="['/education/new']">
+  add education
+</button>
+} @else if(page === 'experience') {
+<button class="newItemBtn" [routerLink]="['/experience/new']">
+  add experience
+</button>
+} }

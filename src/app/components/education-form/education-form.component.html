@@ -1,0 +1,45 @@
+<div class="dialog">
+  <!-- <h2>{{ isEditMode ? "Edit" : "Add" }} Education</h2> -->
+  <form
+    class="dialog__form"
+    [formGroup]="educationForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <section class="dialog__form__section">
+      <div>
+        <label for="name">school name</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter school name"
+          formControlName="name"
+        />
+      </div>
+      <div>
+        <label for="qualification">qualification</label>
+        <input
+          id="qualification"
+          type="text"
+          placeholder="Enter qualification"
+          formControlName="qualification"
+        />
+      </div>
+      <div>
+        <div>
+          <label for="startDate">start date</label>
+          <input id="startDate" type="date" formControlName="startDate" />
+        </div>
+        <div>
+          <label for="endDate">end date</label>
+          <input id="endDate" type="date" formControlName="endDate" />
+        </div>
+      </div>
+      <div>
+        <button type="button" (click)="onCancel()">cancel</button>
+        <button type="submit" [disabled]="educationForm.invalid">
+          {{ isEditMode ? "Update" : "Create" }}
+        </button>
+      </div>
+    </section>
+  </form>
+</div>

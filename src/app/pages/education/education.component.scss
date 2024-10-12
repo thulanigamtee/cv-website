@@ -1,0 +1,11 @@
+@use "../../partials" as *;
+
+.education {
+  @include pageStyle;
+  border-block: 1px solid var(--border-color);
+  padding-block: 40px;
+  // &__newItemBtn {
+  //   @include clearBtn;
+  //   margin-top: 60px;
+  // }
+}

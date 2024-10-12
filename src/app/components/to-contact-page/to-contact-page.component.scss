@@ -1,0 +1,47 @@
+@use "../../partials/" as *;
+
+div {
+  width: 83%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  span {
+    display: none;
+  }
+  a {
+    @include routeBtn;
+    margin-top: 40px;
+  }
+  @media (min-width: 768px) {
+    width: 90%;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    span {
+      display: block;
+      border-top: 1px solid var(--border-color);
+      width: 20%;
+      color: transparent;
+      margin-top: 20px;
+    }
+    h1 {
+      width: 50%;
+    }
+    a {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    width: 77%;
+    h1 {
+      width: 40%;
+    }
+    span {
+      width: 30%;
+    }
+  }
+}

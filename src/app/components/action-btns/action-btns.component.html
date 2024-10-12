@@ -1,0 +1,13 @@
+<div class="action-btns">
+  @if(page === 'education') {
+  <button [routerLink]="['/education/edit', id]" class="action-btns__edit">
+    edit
+  </button>
+
+  } @else if (page === 'experience') {
+  <button [routerLink]="['/experience/edit', id]" class="action-btns__edit">
+    edit
+  </button>
+  }
+  <button class="action-btn__edit" (click)="delete()">delete</button>
+</div>
